@@ -73,7 +73,7 @@ export default function Home() {
             Minhas Tarefas
           </h1>
 
-          <div className="flex justify-center py-2 items-center gap-3">
+          <div className="flex lg:flex-row flex-col justify-center py-2 items-center gap-3">
             <input
               className="w-4/5 lg:w-3/5 bg-slate-50 text-black placeholder:text-gray-500 border-2 rounded-md border-gray-600 py-1 px-2"
               type="text"
@@ -88,48 +88,50 @@ export default function Home() {
                 }
               }}
             />
-            <button
-              className="text-3xl text-red-500 transition-all"
-              onClick={() => {
-                setNewTaskPriority(3);
-              }}
-              style={{
-                filter: newTaskPriority === 3 ? "none" : "grayscale(0.85)",
-              }}
-            >
-              <BsExclamationOctagonFill />
-            </button>
-            <button
-              className="text-3xl text-yellow-300 transition-all"
-              onClick={() => {
-                setNewTaskPriority(2);
-              }}
-              style={{
-                filter: newTaskPriority === 2 ? "none" : "grayscale(0.85)",
-              }}
-            >
-              <BsHourglassSplit />
-            </button>
-            <button
-              className="text-3xl text-green-300 transition-all"
-              onClick={() => {
-                setNewTaskPriority(1);
-              }}
-              style={{
-                filter: newTaskPriority === 1 ? "none" : "grayscale(0.85)",
-              }}
-            >
-              <GiTurtle />
-            </button>
+            <div className="flex items-center gap-4">
+              <button
+                className="text-3xl text-red-500 transition-all"
+                onClick={() => {
+                  setNewTaskPriority(3);
+                }}
+                style={{
+                  filter: newTaskPriority === 3 ? "none" : "grayscale(0.85)",
+                }}
+              >
+                <BsExclamationOctagonFill />
+              </button>
+              <button
+                className="text-3xl text-yellow-300 transition-all"
+                onClick={() => {
+                  setNewTaskPriority(2);
+                }}
+                style={{
+                  filter: newTaskPriority === 2 ? "none" : "grayscale(0.85)",
+                }}
+              >
+                <BsHourglassSplit />
+              </button>
+              <button
+                className="text-3xl text-green-300 transition-all"
+                onClick={() => {
+                  setNewTaskPriority(1);
+                }}
+                style={{
+                  filter: newTaskPriority === 1 ? "none" : "grayscale(0.85)",
+                }}
+              >
+                <GiTurtle />
+              </button>
 
-            <button
-              className="cursor-pointer py-1 px-4 bg-white border-2 rounded-md border-gray-600 hover:active:brightness-75 transition-all "
-              onClick={() => {
-                handleNewTask();
-              }}
-            >
-              Criar
-            </button>
+              <button
+                className="cursor-pointer py-1 px-4 bg-white border-2 rounded-md border-gray-600 hover:active:brightness-75 transition-all "
+                onClick={() => {
+                  handleNewTask();
+                }}
+              >
+                Criar
+              </button>
+            </div>
           </div>
         </header>
         <section className="flex flex-col gap-4 py-4 px-4 text-indigo-900 ">
