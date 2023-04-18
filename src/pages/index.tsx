@@ -68,14 +68,14 @@ export default function Home() {
       </Head>
 
       <main className="container mx-auto">
-        <header className="py-4 gap-4 bg-gray-500 ">
+        <header className="py-4 gap-4 bg-black rounded-b-3xl">
           <h1 className="flex justify-center text-3xl text-white font-mono font-semibold">
             Minhas Tarefas
           </h1>
 
           <div className="flex lg:flex-row flex-col justify-center py-2 items-center gap-3">
             <input
-              className="w-4/5 lg:w-3/5 bg-slate-50 text-black placeholder:text-gray-500 border-2 rounded-md border-gray-600 py-1 px-2"
+              className="w-4/5 lg:w-3/5 bg-[#3e4651] text-white placeholder:text-black border-2 rounded-md border-[#7b0097] py-1 px-2"
               type="text"
               placeholder="Digite sua tarefa!!"
               value={newTask}
@@ -90,41 +90,44 @@ export default function Home() {
             />
             <div className="flex items-center gap-4">
               <button
-                className="text-3xl text-red-500 transition-all"
+                className="text-3xl text-[#ff2895] transition-all"
                 onClick={() => {
                   setNewTaskPriority(3);
                 }}
                 style={{
                   filter: newTaskPriority === 3 ? "none" : "grayscale(0.85)",
+                  opacity: newTaskPriority === 1 ? "1" : "0.75",
                 }}
               >
                 <BsExclamationOctagonFill />
               </button>
               <button
-                className="text-3xl text-yellow-300 transition-all"
+                className="text-3xl text-[#78E45D] transition-all"
                 onClick={() => {
                   setNewTaskPriority(2);
                 }}
                 style={{
                   filter: newTaskPriority === 2 ? "none" : "grayscale(0.85)",
+                  opacity: newTaskPriority === 1 ? "1" : "0.75",
                 }}
               >
                 <BsHourglassSplit />
               </button>
               <button
-                className="text-3xl text-green-300 transition-all"
+                className="text-3xl text-[#3DE4F9] transition-all"
                 onClick={() => {
                   setNewTaskPriority(1);
                 }}
                 style={{
                   filter: newTaskPriority === 1 ? "none" : "grayscale(0.85)",
+                  opacity: newTaskPriority === 1 ? "1" : "0.75",
                 }}
               >
                 <GiTurtle />
               </button>
 
               <button
-                className="cursor-pointer py-1 px-4 bg-white border-2 rounded-md border-gray-600 hover:active:brightness-75 transition-all "
+                className="cursor-pointer py-1 px-4 bg-[#7b0097] rounded-md text-white hover:active:brightness-75 transition-all "
                 onClick={() => {
                   handleNewTask();
                 }}
@@ -134,8 +137,8 @@ export default function Home() {
             </div>
           </div>
         </header>
-        <section className="flex flex-col gap-4 py-4 px-4 text-indigo-900 ">
-          <h1 className="pl-10 text-xl font-semibold text-red-500">
+        <section className="flex flex-col gap-4 py-4 px-4 bg-[#1b1a1f] text-indigo-900">
+          <h1 className="pl-10 text-xl font-semibold text-[#ff2895]">
             Pra ontem!!!
           </h1>
           {tasks.map((item, index) => {
@@ -155,7 +158,7 @@ export default function Home() {
               );
             }
           })}
-          <h1 className="pl-10 text-xl font-semibold text-yellow-300">
+          <h1 className="pl-10 text-xl font-semibold text-[#78E45D]">
             Deveria ser feita hoje...
           </h1>
           {tasks.map((item, index) => {
@@ -175,7 +178,7 @@ export default function Home() {
               );
             }
           })}
-          <h1 className="pl-10 text-xl font-semibold text-green-300">
+          <h1 className="pl-10 text-xl font-semibold text-[#3DE4F9]">
             Sem pressa, só se vive uma vez
           </h1>
           {tasks.map((item, index) => {
